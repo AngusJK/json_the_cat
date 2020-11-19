@@ -5,7 +5,7 @@ const fetchBreedDescription = function(breedName, callback) {
   request(url, (error, response, body) => {
     if (error === null) {
       if (body === '[]') {
-        callback(null, "Sorry. We couldn't find that breed.");
+        callback("Sorry. We couldn't find that breed.", null);
       } else {
         let data = JSON.parse(body);
         let desc = data[0]['description'];
